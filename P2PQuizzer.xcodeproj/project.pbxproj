@@ -85,6 +85,9 @@
 		A5DA9158193255C700474314 /* StudentResult+Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DA9150193255C700474314 /* StudentResult+Parser.m */; };
 		A5DA9159193255C700474314 /* TopScorer+Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DA9152193255C700474314 /* TopScorer+Parser.m */; };
 		A5DA915C193256FB00474314 /* NSDictionary+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DA915B193256FB00474314 /* NSDictionary+Utilities.m */; };
+		A5DA91651932751300474314 /* FileConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DA91641932751300474314 /* FileConstants.m */; };
+		A5DA9167193278E700474314 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5DA9166193278E700474314 /* MessageUI.framework */; };
+		A5DA916C19327D2E00474314 /* QuizShareHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DA916B19327D2E00474314 /* QuizShareHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -247,6 +250,11 @@
 		A5DA9152193255C700474314 /* TopScorer+Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TopScorer+Parser.m"; sourceTree = "<group>"; };
 		A5DA915A193256FB00474314 /* NSDictionary+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Utilities.h"; sourceTree = "<group>"; };
 		A5DA915B193256FB00474314 /* NSDictionary+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Utilities.m"; sourceTree = "<group>"; };
+		A5DA91631932751300474314 /* FileConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileConstants.h; sourceTree = "<group>"; };
+		A5DA91641932751300474314 /* FileConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileConstants.m; sourceTree = "<group>"; };
+		A5DA9166193278E700474314 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		A5DA916A19327D2E00474314 /* QuizShareHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizShareHelper.h; sourceTree = "<group>"; };
+		A5DA916B19327D2E00474314 /* QuizShareHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizShareHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +262,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5DA9167193278E700474314 /* MessageUI.framework in Frameworks */,
 				A5DA912B1932487200474314 /* libz.1.2.5.dylib in Frameworks */,
 				A59C89B7190D68D9005829D7 /* CoreGraphics.framework in Frameworks */,
 				A59C89BB190D68D9005829D7 /* CoreData.framework in Frameworks */,
@@ -334,6 +343,7 @@
 		A59C89B3190D68D9005829D7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A5DA9166193278E700474314 /* MessageUI.framework */,
 				A5DA912A1932487200474314 /* libz.1.2.5.dylib */,
 				A59C89B4190D68D9005829D7 /* Foundation.framework */,
 				A59C89B6190D68D9005829D7 /* CoreGraphics.framework */,
@@ -556,6 +566,7 @@
 		A5B68D58191EBB0D009F108D /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				A5DA916919327D1700474314 /* Sharing */,
 				A5DA91441932559000474314 /* Parser */,
 				A5DA914019324DE000474314 /* FileManager */,
 				A59E506A19314B5F006E8889 /* Categories */,
@@ -642,6 +653,8 @@
 		A5DA914019324DE000474314 /* FileManager */ = {
 			isa = PBXGroup;
 			children = (
+				A5DA91631932751300474314 /* FileConstants.h */,
+				A5DA91641932751300474314 /* FileConstants.m */,
 				A5DA914119324E7C00474314 /* FileManager.h */,
 				A5DA914219324E7C00474314 /* FileManager.m */,
 			);
@@ -669,6 +682,15 @@
 				A5DA9152193255C700474314 /* TopScorer+Parser.m */,
 			);
 			path = Parser;
+			sourceTree = "<group>";
+		};
+		A5DA916919327D1700474314 /* Sharing */ = {
+			isa = PBXGroup;
+			children = (
+				A5DA916A19327D2E00474314 /* QuizShareHelper.h */,
+				A5DA916B19327D2E00474314 /* QuizShareHelper.m */,
+			);
+			path = Sharing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -771,6 +793,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5DA916C19327D2E00474314 /* QuizShareHelper.m in Sources */,
 				A59E5048193132AF006E8889 /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
 				A5DA9157193255C700474314 /* StudentAnswer+Parser.m in Sources */,
 				A5DA9156193255C700474314 /* Result+Parser.m in Sources */,
@@ -810,6 +833,7 @@
 				A59E5052193132AF006E8889 /* NSManagedObjectContext+MagicalThreading.m in Sources */,
 				A59E506919314613006E8889 /* P2PQuizzer.xcdatamodeld in Sources */,
 				4CC9F85D192903E600CC524B /* QuestionChoice.m in Sources */,
+				A5DA91651932751300474314 /* FileConstants.m in Sources */,
 				A5DA913C1932496700474314 /* mztools.c in Sources */,
 				A59E5057193132AF006E8889 /* MagicalRecord+ErrorHandling.m in Sources */,
 				4CC9F860192903FB00CC524B /* Question.m in Sources */,
