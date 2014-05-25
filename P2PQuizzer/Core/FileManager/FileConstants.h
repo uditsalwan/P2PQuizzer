@@ -1,5 +1,5 @@
 //
-//  QuizBDC.h
+//  FileConstants.h
 //  P2PQuizzer
 //
 //  Created by Udit Salwan on 25/05/14.
@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface QuizBDC : NSObject
+@interface FileConstants : NSObject
 
-+(BOOL) saveQuiz:(Quiz*)quiz;
-+(Quiz*) quizWithID:(NSString*)quizID;
+extern NSString* const kTempFolderName;
+extern NSString* const kAppFileExtension;
 
 @end

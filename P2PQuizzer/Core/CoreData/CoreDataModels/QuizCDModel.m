@@ -14,4 +14,9 @@
 @dynamic quizID;
 @dynamic quizDetail;
 
++(NSString*)entityName
+{
+    return @"Quiz";
+}
+
 @end

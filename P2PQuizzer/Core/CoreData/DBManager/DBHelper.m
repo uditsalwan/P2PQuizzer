@@ -58,14 +58,14 @@
 {
     NSManagedObject *object =      [NSEntityDescription
                                     insertNewObjectForEntityForName:entityName
-                                    inManagedObjectContext:[NSManagedObjectContext MR_rootSavingContext]];
+                                    inManagedObjectContext:[NSManagedObjectContext MR_defaultContext]];
     return object;
 }
 
 -(BOOL) saveObject:(NSManagedObject *)object
 {
     __block BOOL saveStatus = FALSE;
-    __block NSManagedObjectContext *localContext = [NSManagedObjectContext MR_rootSavingContext];
+    __block NSManagedObjectContext *localContext = [NSManagedObjectContext MR_defaultContext];
     [localContext   MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
         if (success) {
             saveStatus = TRUE;
@@ -78,6 +78,14 @@
     }];
     
     return YES;
+}
+
+-(NSMutableArray *) managedObjectsForModelClass:(Class)entityClass andPredicate:(NSPredicate *)predicate
+{
+    [MagicalRecord setErrorHandlerTarget:self action:@selector(handleCoreDataError)];
+    NSMutableArray *data = nil;
+    data = [NSMutableArray arrayWithArray:[entityClass MR_findAllWithPredicate: predicate]];
+    return  data;
 }
 
 
@@ -145,6 +153,11 @@
 - (NSURL *)applicationDocumentsDirectory
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+- (void)handleCoreDataError
+{
+    NSLog(@"Error in core data operations");
 }
 
 @end

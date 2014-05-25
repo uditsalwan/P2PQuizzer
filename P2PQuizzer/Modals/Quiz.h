@@ -13,6 +13,9 @@
 @property (nonatomic,strong) NSString *title;
 @property (nonatomic) NSInteger numberOfQuestions;
 @property (nonatomic,strong) NSString *createdBy;
-@property (nonatomic,strong) NSArray *questions;
+@property (nonatomic,strong) NSMutableArray *questions;
+
+// JSON string stored in CoreData
+@property (nonatomic,strong) NSString *quizDetails;
 
 @end

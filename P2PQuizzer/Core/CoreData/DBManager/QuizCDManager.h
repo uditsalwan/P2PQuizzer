@@ -11,5 +11,6 @@
 @interface QuizCDManager : BaseCDManager
 
 -(BOOL)saveQuiz:(Quiz*)quiz;
+-(Quiz*)quizEntityWithQuizID:(NSString*)quizID;
 
 @end

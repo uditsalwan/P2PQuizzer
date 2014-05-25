@@ -20,5 +20,8 @@
     #import "CoreData+MagicalRecord.h"
 #import "Models.h"
 #import "Business.h"
+#import "Categories.h"
+#import "FileConstants.h"
+#import "FileManager.h"
 
 #endif

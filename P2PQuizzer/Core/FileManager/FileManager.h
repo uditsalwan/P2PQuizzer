@@ -10,4 +10,6 @@
 
 @interface FileManager : NSObject
 
++(NSString*)saveFileWithName:(NSString*)fileName inFolder:(NSString*)folderName withData:(NSData*)data;
+
 @end

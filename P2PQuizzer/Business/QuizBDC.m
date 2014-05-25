@@ -17,4 +17,30 @@
     return [manager saveQuiz:quiz];
 }
 
+// Get Quiz from Core Data
++(Quiz*) quizWithID:(NSString*)quizID
+{
+    QuizCDManager* manager = [[QuizCDManager alloc] init];
+    Quiz *quiz = [manager quizEntityWithQuizID:quizID];
+    
+    Quiz *newQuiz = nil;
+    NSDictionary *contentDictionary;
+    
+    if (quiz)
+    {
+        if(quiz.quizDetails)
+        {
+            __autoreleasing NSError *parseError;
+            contentDictionary = [NSJSONSerialization
+                                 JSONObjectWithData:[quiz.quizDetails dataUsingEncoding:NSUTF8StringEncoding]
+                                 options: NSJSONReadingMutableContainers
+                                 error: &parseError];
+        }
+
+        newQuiz = [[Quiz alloc] initWithDictionary:contentDictionary];
+        newQuiz.objectID = quiz.objectID;
+    }
+    return newQuiz;
+}
+
 @end

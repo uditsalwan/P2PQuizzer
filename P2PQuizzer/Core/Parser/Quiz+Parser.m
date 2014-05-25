@@ -27,7 +27,7 @@
         [questions addObject:[[Question alloc]initWithDictionary:questionDictionary]];
     }
     
-    quiz.questions = [[NSArray alloc]initWithArray:questions];
+    quiz.questions = [NSMutableArray arrayWithArray:questions];
     
     return quiz;
 }

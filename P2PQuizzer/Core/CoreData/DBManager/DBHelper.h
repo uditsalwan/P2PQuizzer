@@ -14,5 +14,6 @@
 
 -(NSManagedObject *) modelForEntityName:(NSString *)entityName;
 -(BOOL) saveObject:(NSManagedObject *)object;
+-(NSMutableArray *) managedObjectsForModelClass:(Class)entityClass andPredicate:(NSPredicate *)predicate;
 
 @end

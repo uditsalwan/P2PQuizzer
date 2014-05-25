@@ -7,6 +7,8 @@
 //
 
 #import "MPOptionsViewController.h"
+#import <MessageUI/MessageUI.h>
+#import <MessageUI/MFMailComposeViewController.h>
 
 @interface MPOptionsViewController ()
 {
@@ -38,7 +40,35 @@
 #warning Just for demonstration
     Quiz *quiz = [[Quiz alloc] init];
     quiz.title = @"testTitle";
+    quiz.numberOfQuestions = 1;
+    quiz.createdBy = @"uditTest";
+
+    Question* question = [[Question alloc] init];
+    question.qType = kSingleAnswerType;
+    question.questionText = @"Hello how are you world";
+    
+    [quiz.questions addObject:question];
+    
     [QuizBDC saveQuiz:quiz];
+    
+    Quiz *quizFetched = [QuizBDC quizWithID:@"6445d91a-0a3c-4f95-8fd2-9cbb1f9788dc"];
+    if (quizFetched) {
+        
+    }
+    
+    /*
+    NSString* dict = [[quiz dictionaryForObject] jsonString];
+    NSData* data = [dict dataUsingEncoding:NSUTF8StringEncoding];
+    [FileManager saveFileWithName:@"quizFile" inFolder:quiz.objectID withData:data];
+    
+    MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
+    [controller setMessageBody:[NSString stringWithFormat:@"This is test email"] isHTML:NO];
+    [controller setToRecipients:[NSArray array]];
+    [controller setCcRecipients:[NSArray array]];
+    [controller setBccRecipients:[NSArray array]];
+    [controller addAttachmentData:data mimeType:@"application/json" fileName:@"Test.squiz"];
+    [self presentViewController:controller animated:YES completion:nil];
+     */
 }
 
 - (void)didReceiveMemoryWarning
