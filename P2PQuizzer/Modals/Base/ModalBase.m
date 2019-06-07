@@ -19,4 +19,16 @@
     return self;
 }
 
+-(id)initWithDictionary:(NSDictionary *)dictionary
+{
+    [self doesNotRecognizeSelector:_cmd];
+    return nil;
+}
+
+-(NSDictionary*)dictionaryForObject
+{
+    [self doesNotRecognizeSelector:_cmd];
+    return nil;
+}
+
 @end

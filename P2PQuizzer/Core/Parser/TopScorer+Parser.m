@@ -27,7 +27,7 @@
     NSMutableDictionary *topScorerDictionary = [[NSMutableDictionary alloc]init];
     
     [topScorerDictionary safeSetObject:self.studentID forKey:@"studentID"];
-    [topScorerDictionary safeSetObject:[NSString stringWithFormat:@"%d",self.rollNo] forKey:@"rollNo"];
+    [topScorerDictionary safeSetObject:[NSString stringWithFormat:@"%ld",(long)self.rollNo] forKey:@"rollNo"];
     [topScorerDictionary safeSetObject:self.studentName forKey:@"name"];
     
     return topScorerDictionary;

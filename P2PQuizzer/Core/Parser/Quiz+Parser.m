@@ -39,7 +39,7 @@
     [quizDictionary safeSetObject:self.objectID forKey:@"quizID"];
     [quizDictionary safeSetObject:self.createdBy forKey:@"teacherID"];
     [quizDictionary safeSetObject:self.title forKey:@"title"];
-    [quizDictionary safeSetObject:[NSString stringWithFormat:@"%d",self.numberOfQuestions] forKey:@"number_of_questions"];
+    [quizDictionary safeSetObject:[NSString stringWithFormat:@"%ld",(long)self.numberOfQuestions] forKey:@"number_of_questions"];
     
     NSMutableArray *questionsArray = [[NSMutableArray alloc]init];
     

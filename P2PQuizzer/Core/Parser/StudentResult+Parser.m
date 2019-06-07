@@ -28,7 +28,7 @@
     
     [studentResultDictionary safeSetObject:self.studentID forKey:@"studentID"];
     [studentResultDictionary safeSetObject:[NSString stringWithFormat:@"%f",[self.score floatValue]] forKey:@"score"];
-    [studentResultDictionary safeSetObject:[NSString stringWithFormat:@"%d",self.rank] forKey:@"rank"];
+    [studentResultDictionary safeSetObject:[NSString stringWithFormat:@"%ld",(long)self.rank] forKey:@"rank"];
     return studentResultDictionary;
 }
 @end
